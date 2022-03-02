@@ -53,6 +53,26 @@ const details = (detail) => {
   };
 
   const detailInfo = (info) => {
-    console.log(info);
+   
+    document.getElementById('detail-phone').innerHTML=`
+    
+ 
+    
+    <div class="col container d-flex justify-content-center">
+    <div class="card h-100  text-center p-2 w-50">
+    <div> 
+    <img src="${info.image}" class="card-img-top w-50 " alt="...">
+    </div>
+    
+      <div class="card-body">
+      <h5> <span class="fs-4">${info.name} </span> </h5>
+        <h5> <span class="fs-6 relase-date">${info.releaseDate ?info.releaseDate:"No release date Found"}</span> </h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+    
+    `;
+    
 
   }
