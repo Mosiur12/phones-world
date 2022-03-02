@@ -59,15 +59,34 @@ const details = (detail) => {
  
     
     <div class="col container d-flex justify-content-center">
-    <div class="card h-100  text-center p-2 w-50">
-    <div> 
+    <div class="card h-100  p-2 w-50">
+    <div > 
     <img src="${info.image}" class="card-img-top w-50 " alt="...">
     </div>
     
       <div class="card-body">
       <h5> <span class="fs-4">${info.name} </span> </h5>
         <h5> <span class="fs-6 relase-date">${info.releaseDate ?info.releaseDate:"No release date Found"}</span> </h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+        
+        <h5>Main Features :</h5>
+        <p><span class="fs-5">storage: </span> ${info.mainFeatures.storage}</p>
+        <p><span class="fs-5">display: </span> ${info.mainFeatures.displaySize}</p>
+        <p><span class="fs-5">chipset: </span> ${info.mainFeatures.chipSet}</p>
+        <p><span class="fs-5">memory: </span> ${info.mainFeatures.memory}</p>
+
+        <p><span class="fs-5">sensor: </span> ${info.mainFeatures.sensors}</p>
+
+
+
+        <h5>Others Information:</h5>
+      ${info.others ? ` <div> <p><span class="fs-5">Wlan: </span> ${info.others.WLAN}</p>
+      <p><span class="fs-5">Bluetiith: </span> ${info.others.Bluetooth}</p>
+      <p><span class="fs-5">GPS: </span> ${info.others.GPS}</p>
+      <p><span class="fs-5">NFC: </span> ${info.others.NFC}</p>
+      <p><span class="fs-5">Radio: </span> ${info.others.Radio}</p>
+      <p><span class="fs-5">USB: </span> ${info.others.USB}</p></div>`:"This product of others property is not found" }
+
       </div>
     </div>
   </div>
