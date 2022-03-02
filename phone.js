@@ -58,20 +58,20 @@ const details = (detail) => {
   };
 
   const detailInfo = (info) => {
-   
-    document.getElementById('detail-phone').innerHTML=`
+    
+   document.getElementById('detail-phone').innerHTML=`
     
  
     
     <div class="col container d-flex justify-content-center">
     <div class="card h-100  p-2 w-50">
-    <div > 
+    <div class="text-center"> 
     <img src="${info.image}" class="card-img-top w-50 " alt="...">
     </div>
     
       <div class="card-body">
-      <h5> <span class="fs-4">${info.name} </span> </h5>
-        <h5> <span class="fs-6 relase-date">${info.releaseDate ?info.releaseDate:"No release date Found"}</span> </h5>
+      <h5 class="text-center"> <span class="fs-4">${info.name} </span> </h5>
+        <h5 class="text-center"> <span class="fs-6 relase-date">${info.releaseDate ?info.releaseDate:"No release date Found"}</span> </h5>
 
         
         <h5>Main Features :</h5>
@@ -97,6 +97,5 @@ const details = (detail) => {
   </div>
     
     `;
-    
 
   }
