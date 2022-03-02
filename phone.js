@@ -1,4 +1,4 @@
-
+// -----------error handle--------
 const noFound = document.getElementById('not-found');
 noFound.style.display = 'none';
 
@@ -6,14 +6,16 @@ const searchPhone = () =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value ;
     
-// -------clear data
+// -------clear data---
     searchField.value = "";
+
+    // --------load data----
 
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
 
     fetch(url)
     .then (res => res.json())
-    .then (data => displaySearch(data.data));
+    .then (data => displaySearch(data.data.slice(0 , 20)));
 }
 
 const displaySearch = data =>{
@@ -25,7 +27,7 @@ const displaySearch = data =>{
     }
 
     data.forEach(phone => {
-        // console.log(phone);
+        
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -44,8 +46,11 @@ const displaySearch = data =>{
 
 }
 
+
+// ---------phone detail information
+
 const details = (detail) => {
-  // console.log(detail);
+  
   const url = `https://openapi.programming-hero.com/api/phone/${detail}`;
   fetch(url)
   .then(res => res.json())
